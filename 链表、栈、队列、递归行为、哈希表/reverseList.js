@@ -16,7 +16,7 @@ class LinkedList{
     _node(index) {
         if(index< 0 || index > this.size) throw new Error('越界了');
         let current = this.head;
-        for(let i = 0; i < index; i++) {
+        for(let i = 0; i < index; i++) {   // 这里不能等于 
             current = current.next;
         }
         return current;
@@ -31,7 +31,7 @@ class LinkedList{
             let head = this.head;
             this.head = new Node(element,head)
         } else{
-            let prevNode = this._node(index - 1);
+            let prevNode = this._node(index - 1);    // 找到前一个
             prevNode.next = new Node(element, prevNode.next);
         }
         this.size++
@@ -44,7 +44,7 @@ class LinkedList{
         node.element = element;
         return node;
     }
-    reverse(){  // 反转链表 
+    reverse(){  // 反转链表 **
        let head = this.head;
        let next = null;
        let pre = null;
@@ -58,16 +58,17 @@ class LinkedList{
     }
     removeValue(num){
         let head = this.head;
-        while(head !== null){
+        while(head !== null){   // 找到头部节点要删除多少
             if(head.element !== num){
                 break;
             }
             head = head.next;
         }
+        //head来到第一个不需要删除的位置
         let pre = head;
         let cur = head;
-
-        while(cur !== null){
+        
+        while(cur !== null){ //循环节点
             if(cur.element == num) {
                 pre.next = cur.next;
             }else{

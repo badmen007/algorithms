@@ -11,11 +11,11 @@ function selectionSort(arr){
         for(let j = i+1; j < arr.length; j++){
             minIndex = arr[j] < arr[minIndex] ? j : minIndex;
         }
-        sweap(arr, i, minIndex);
+        swap(arr, i, minIndex);
     }
 }
 
-function sweap(arr, i, j) {
+function swap(arr, i, j) {
     let temp = arr[i];
     arr[i] = arr[j];
     arr[j] = temp;
@@ -83,5 +83,3 @@ function main(){
     console.log(succeed ? 'Nice' : 'Fuck')
 }
 main();
-
-

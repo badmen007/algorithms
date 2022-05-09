@@ -1,0 +1,43 @@
+
+class Comparator {
+  constructor(compareFunction) {
+    this.compare = compareFunction || Comparator.defaultCompareFunction
+  }
+
+  static defaultCompareFunction(a, b) {
+    if(a === b) {
+      return 0;
+    }
+    return a < b ? -1 : 1;
+  }
+
+  equal(a, b) {
+    return this.compare(a, b) === 0;
+  }
+
+  lessThen(a ,b) {
+    return this.compare(a, b) < 0;
+  }
+
+  greaterThan(a, b) {
+    return this.compare(a, b) > 0;
+  }
+
+  lessThanOrEqual(a, b) {
+    return this.lessThen(a, b) || this.equal(a, b);
+  }
+
+  greaterThanOrEqual(a, b) {
+    return this.greaterThan(a, b) || this.equal(a, b);
+  }
+
+  /**
+   * 反转
+   */
+  reverse() {
+    const compareOrigin = this.compare;
+    this.compare = (a ,b) => compareOrigin(b, a);
+  }
+}
+
+module.exports = Comparator;

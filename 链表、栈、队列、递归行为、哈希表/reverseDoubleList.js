@@ -9,7 +9,6 @@ class Node{
     }
 }
 
-
 class LinkedList{
     constructor() {
         this.head = null;
@@ -50,46 +49,20 @@ class LinkedList{
         let node = this._node(index);
         let preNode = node.pre;
         let nextNode = node.next;
-        if(preNode === null) {
+
+        if(preNode === null) {  //说明是头部节点 
             this.head = nextNode;
         }else{
             preNode.next = nextNode;  // 上一个记住下一个 
         }
 
-        if(nextNode === null){
+        if(nextNode === null){  //说明是尾部节点
             this.tail = pre;
         }else{
             nextNode.pre = preNode;   // 下一个记住上一个
         }
         this.size--
     }
-
-    // 移除某个值   这个有问题  
-    removeValue(num){
-        let head = this.head;
-        while(head !== null){   
-            if(head.element !== num){
-                break;
-            }
-            head = head.next;
-        }
-        let pre = head; 
-        let cur = head;
-
-        while(cur !== null){
-            if(cur.element == num) {
-                pre.next = cur.next;
-
-            }else{
-                pre = cur;
-                cur.pre = pre
-            }
-            cur = cur.next
-        }
-        return head;
-    }
-
-
     reverse(){  // 双向链表的反转  上一个记住下一个  下一个记住上一个
         let head = this.head
         let pre = null;
@@ -123,3 +96,6 @@ ll.add(4);
 // let result = ll.reverse();
 let result = ll.removeValue(2);
 console.dir(result, {depth: 1000})
+
+
+// 用双向链表和数组实现队列和栈
