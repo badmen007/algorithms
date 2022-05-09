@@ -198,6 +198,7 @@ class LinkedList {
     return this;
   }
 }
+module.exports = LinkedList;
 
 const arr = [1, 2, 4, 5]
 const list = new LinkedList();
@@ -208,4 +209,4 @@ list.deleteHead()
 list.inert(8, 2)
 const result = list.deleteTail();
 console.log(result);
-console.dir(list, {depth: 10000});
+console.dir(list.toString(), {depth: 10000});
