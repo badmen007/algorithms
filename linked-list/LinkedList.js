@@ -2,7 +2,6 @@
 const LinkedListNode = require('./LinkedListNode');
 const Comparator = require('../utils/Comparator');
 
-// 单向链表
 class LinkedList {
   /**
    * 比较函数
