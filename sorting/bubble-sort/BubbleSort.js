@@ -9,7 +9,7 @@ class BubbleSort extends Sort {
 
     const array = [...originalArray];
 
-    for(let i = 0; i < array.length - 1; i += 1) {
+    for(let i = 1; i < array.length; i += 1) {
       swapped = false;
 
       for(let j = 0; j < array.length - i; j += 1) {

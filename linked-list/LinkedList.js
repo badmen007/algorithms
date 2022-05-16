@@ -65,7 +65,7 @@ class LinkedList {
   }
 
   delete(value) {
-    if(this.head === null) {
+    if(this.head) {
       return null;
     }
 
