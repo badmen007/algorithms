@@ -207,5 +207,5 @@ list.append(6)
 list.deleteHead()
 list.inert(8, 2)
 const result = list.deleteTail();
-console.log(result);
-console.dir(list.toString(), {depth: 10000});
+// console.log(result);
+// console.dir(list.toString(), {depth: 10000});
